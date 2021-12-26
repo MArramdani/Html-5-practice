@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script>
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+            
+            function drag(ev) {
+                ev.dataTransfer.setData("text", ev.target.id);
+            }
+            
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+       </script>
+    </head>
+    <body bgcolor="Mohamed">
+        <header>
+            <h1>Header very big</h1>
+            <h3>Header medium</h3>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About Me</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <section>
+                <h1>Introduction</h1>
+                <p>Hey, My name is Mohamed. Welcome to my humble E-CV</p>
+                <aside> 
+                    <p>It's a Work in Progress thing.</p>
+                    <span><b>Status: </b></span></span><progress min="0" max="100" value="20"></progress>
+                </aside>
+            </section>
+            <section>
+                <h1>Section 2 WIP</h1>
+                <p>WIP...</p><br><br>
+            </section>
+        </article>
+        <p>Put the ball in the box under it:</p>
+        <img id="image" src="data/ball.jpg" draggable="true"
+        ondragstart="drag(event)" width="200" height="200" alt="" /> 
+
+        <div id="box" ondrop="drop(event)"
+        ondragover="allowDrop(event)"
+        style="border:1px solid black; 
+        width:200px; height:200px;background-color: darkslategrey;" ></div>
+     
+       
+
+
+        <span>CLICK ME: <br></span><audio controls autoplay>
+            <source src="data/hello there.mp3" type="audio/mp3">
+            Audio element not supported by your browser.
+        </audio></br>
+        <video autoplay muted loop>
+            <source src="data/waving.mp4" type="video/mp4" >
+            Video is not support by your browser.
+        </video>
+
+        
+        <footer>
+
+        </footer>
+    </body>
+</html>
